@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Arispe Claudio",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",

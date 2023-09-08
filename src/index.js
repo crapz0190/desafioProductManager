@@ -1,50 +1,84 @@
-/* eslint-disable linebreak-style */
-class ProductManager {
-  constructor () {
-    this.products = [];
-    this.id = 1;
-  }
+import ProductManager from "./manager/managerProducts.js";
+import dirname from "./utils/dirname.js";
+import { join } from "node:path";
 
-  addProduct = async (title, description, price, thumbnail, code, stock) => {
+// establezco la ruta absoluta al archivo products.json
+const manager = new ProductManager(
+  join(dirname, "../fileManagement", "products.json")
+);
 
-    // utilizo (some) para obtener un booleano
-    const codeRepeated = this.products.some(item => item.code === code);
-    if (!codeRepeated) {
-      // si el codigo no se repite declaro la segunda condicion
-      const addProducts = {
-        title,
-        description,
-        price,
-        thumbnail,
-        code,
-        stock,
-      };
-      // si alguno de los campos no esta incluido -- arroja un error (mensaje) --, sino se agrega todos los campos màs el id autoincrementable
-      !Object.values(addProducts).includes(undefined) ? this.products.push({...addProducts, id: this.id++}) : console.error("All fields are required");
-    } else {
-      console.error(`the code ${code} is repeated`);
-    }
-  };
+const addProduct1 = {
+  title: "title-1",
+  description: "description-1",
+  price: 37,
+  // thumbnail: "image-1", // FALTA CAMPO
+  code: "code-1",
+  stock: 34,
+};
 
-  getProducts = () => {
-    return this.products;
-  };
+const addProduct2 = {
+  title: "title-2",
+  description: "description-2",
+  price: 17,
+  thumbnail: "image-2",
+  code: "code-2",
+  stock: 34,
+};
 
-  getProductById = (id) => {
-    // en la variable retengo el resultado de aplicar el (metodo find), para ello utilizo el this.products del constructor que contiene todos los productos en su array
-    const idFound = this.products.find(product => product.id === id);
-    !idFound ? console.error("Not Found") : console.log(idFound);
-  };
+const addProduct3 = {
+  title: "title-3",
+  description: "description-3",
+  price: 45,
+  thumbnail: "image-3",
+  code: "code-3",
+  stock: 34,
+};
 
-}
+const addProduct4 = {
+  title: "title-4",
+  description: "description-4",
+  price: 64,
+  thumbnail: "image-4",
+  code: "code-3", // EL CODIGO SE REPITE
+  stock: 26,
+};
 
-const manager = new ProductManager();
+const addProduct5 = {
+  title: "title-5",
+  description: "description-5",
+  price: 23,
+  thumbnail: "image-5",
+  code: "code-5",
+  stock: 16,
+};
 
-manager.addProduct("title-1", "description-1", 23, "image-1", "code-1", 13);
-manager.addProduct("title-2", "description-2", 23, "image-2", "code-1", 16); // codigo repetido
-manager.addProduct("title-3", "description-3", 23, "image-3", "code-3");     // campo faltante
-manager.addProduct("title-4", "description-4", 23, "image-4", "code-4", 25);
-manager.addProduct("title-5", "description-5", 23, "image-5", "code-5", 21);
+const addProduct6 = {
+  title: "title-6",
+  description: "description-6",
+  price: 36,
+  thumbnail: "image-6",
+  code: "code-6",
+  stock: 56,
+};
 
-console.log(manager.getProducts());
-manager.getProductById(5);
+manager.addProduct(addProduct1);
+manager.addProduct(addProduct2);
+manager.addProduct(addProduct3);
+manager.addProduct(addProduct4);
+manager.addProduct(addProduct5);
+manager.addProduct(addProduct6);
+
+// manager.getProducts();
+
+// manager.getProductById(2);
+
+// manager.deleteProduct(3);
+
+// manager.updateProduct(3, {
+//   title: "title-5",
+//   description: "description-5",
+//   price: 65,
+//   thumbnail: "image-5",
+//   code: "code-5",
+//   stock: 24,
+// });
