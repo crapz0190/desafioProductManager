@@ -8,6 +8,29 @@ class ProductManager {
     this.id = 1;
   }
 
+  getID = async (id) => {
+    try {
+      const products = await this.getProducts();
+      const idFound = products.find((product) => product.id === id);
+      return idFound;
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  readProducts = async () => {
+    try {
+      if (existsSync(this.path)) {
+        const readArrObj = await readFile(this.path, "utf-8");
+        return JSON.parse(readArrObj);
+      }
+
+      return [];
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   addProduct = async (products) => {
     const codeRepeated = this.products.some(
       (item) => item.code === products.code
@@ -38,29 +61,15 @@ class ProductManager {
     }
   };
 
-  getProducts = async () => {
+  getProducts = async (limit) => {
+    // recibo el parametro de la variabe limit con el req.query
     try {
-      // determino la existencia del this.path
-      if (existsSync(this.path)) {
-        // de existir se realiza una lectura del archivo, luego se retorna haciendo un JSON.parse
-        const data = await readFile(this.path, "utf-8");
-        // console.log(JSON.parse(data));
-        return JSON.parse(data);
-      } else {
-        return [];
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  getID = async (id) => {
-    try {
-      const products = await this.getProducts();
-      const idFound = products.find((product) => product.id === id);
-      if (idFound) {
-        return idFound;
-      }
+      const data = await this.readProducts();
+      // Configuro el limite a mostrar utilizando el metodo SLICE
+      const setLimit = data.slice(0, limit);
+      // establezco la condicion de que, sino existe el req.query (peticion), entonces muestra toda la lista de productos, caso contrario se muestra el limite de productos solicitados
+      if (!limit) return data;
+      return setLimit;
     } catch (err) {
       console.error(err);
     }
@@ -69,7 +78,7 @@ class ProductManager {
   getProductById = async (id) => {
     try {
       const idFound = await this.getID(id);
-      !idFound ? console.error("Not Found") : console.log(idFound);
+      return idFound;
     } catch (err) {
       console.error(err);
     }
