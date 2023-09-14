@@ -42,95 +42,95 @@ app.listen(config.PORT, () => {
 
 // ------------- Crear Productos  -------------
 
-const addProduct1 = {
-  title: "title-1",
-  description: "description-1",
-  price: 37,
-  thumbnail: "image-1",
-  code: "code-1",
-  stock: 34,
-};
+// const addProduct1 = {
+//   title: "title-1",
+//   description: "description-1",
+//   price: 37,
+//   thumbnail: "image-1",
+//   code: "code-1",
+//   stock: 34,
+// };
 
-const addProduct2 = {
-  title: "title-2",
-  description: "description-2",
-  price: 17,
-  thumbnail: "image-2",
-  code: "code-2",
-  stock: 34,
-};
+// const addProduct2 = {
+//   title: "title-2",
+//   description: "description-2",
+//   price: 17,
+//   thumbnail: "image-2",
+//   code: "code-2",
+//   stock: 34,
+// };
 
-const addProduct3 = {
-  title: "title-3",
-  description: "description-3",
-  price: 45,
-  thumbnail: "image-3",
-  code: "code-3",
-  stock: 34,
-};
+// const addProduct3 = {
+//   title: "title-3",
+//   description: "description-3",
+//   price: 45,
+//   thumbnail: "image-3",
+//   code: "code-3",
+//   stock: 34,
+// };
 
-const addProduct4 = {
-  title: "title-4",
-  description: "description-4",
-  price: 64,
-  thumbnail: "image-4",
-  code: "code-4",
-  stock: 26,
-};
+// const addProduct4 = {
+//   title: "title-4",
+//   description: "description-4",
+//   price: 64,
+//   thumbnail: "image-4",
+//   code: "code-4",
+//   stock: 26,
+// };
 
-const addProduct5 = {
-  title: "title-5",
-  description: "description-5",
-  price: 23,
-  thumbnail: "image-5",
-  code: "code-5",
-  stock: 16,
-};
+// const addProduct5 = {
+//   title: "title-5",
+//   description: "description-5",
+//   price: 23,
+//   thumbnail: "image-5",
+//   code: "code-5",
+//   stock: 16,
+// };
 
-const addProduct6 = {
-  title: "title-6",
-  description: "description-6",
-  price: 36,
-  thumbnail: "image-6",
-  code: "code-6",
-  stock: 56,
-};
+// const addProduct6 = {
+//   title: "title-6",
+//   description: "description-6",
+//   price: 36,
+//   thumbnail: "image-6",
+//   code: "code-6",
+//   stock: 56,
+// };
 
-const addProduct7 = {
-  title: "title-7",
-  description: "description-7",
-  price: 45,
-  thumbnail: "image-7",
-  code: "code-7",
-  stock: 21,
-};
+// const addProduct7 = {
+//   title: "title-7",
+//   description: "description-7",
+//   price: 45,
+//   thumbnail: "image-7",
+//   code: "code-7",
+//   stock: 21,
+// };
 
-const addProduct8 = {
-  title: "title-8",
-  description: "description-8",
-  price: 67,
-  thumbnail: "image-8",
-  code: "code-8",
-  stock: 58,
-};
+// const addProduct8 = {
+//   title: "title-8",
+//   description: "description-8",
+//   price: 67,
+//   thumbnail: "image-8",
+//   code: "code-8",
+//   stock: 58,
+// };
 
-const addProduct9 = {
-  title: "title-9",
-  description: "description-9",
-  price: 86,
-  thumbnail: "image-9",
-  code: "code-9",
-  stock: 41,
-};
+// const addProduct9 = {
+//   title: "title-9",
+//   description: "description-9",
+//   price: 86,
+//   thumbnail: "image-9",
+//   code: "code-9",
+//   stock: 41,
+// };
 
-const addProduct10 = {
-  title: "title-10",
-  description: "description-10",
-  price: 78,
-  thumbnail: "image-10",
-  code: "code-10",
-  stock: 48,
-};
+// const addProduct10 = {
+//   title: "title-10",
+//   description: "description-10",
+//   price: 78,
+//   thumbnail: "image-10",
+//   code: "code-10",
+//   stock: 48,
+// };
 
 // manager.addProduct(addProduct1);
 // manager.addProduct(addProduct2);
